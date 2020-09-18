@@ -60,4 +60,17 @@ func main() {
 	sl8 := a[:]
 	a[1] = 8
 	fmt.Println("слайс из массива", sl8)
+	
+	// ============================================
+	var card = Card{balance: 2000, amount: 0}
+	card.addAmountToCard(5000)
+	println(card.balance)
 }
+	type Card struct {
+		balance int
+		amount  int
+	}
+
+	func (card *Card) addAmountToCard(amount int) {
+		(*card).balance += amount
+	}
